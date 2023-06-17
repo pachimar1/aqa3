@@ -17,7 +17,7 @@ class CallbackCreditCardTestV1 {
 
     @BeforeAll
 //    static void setUpAll() {System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe"); }
-    static void setUpAll() {
+    static void setDriver() {
         WebDriverManager.chromedriver().setup();
     }
 
@@ -42,7 +42,7 @@ class CallbackCreditCardTestV1 {
         driver.findElement(By.cssSelector("[data-test-id='name']")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone']")).sendKeys("+79270000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
-        driver.findElement(By.tagName("button")).click();
+        driver.findElement(By.cssSelector(".button__text")).click();
 
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         String actual = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().trim();
