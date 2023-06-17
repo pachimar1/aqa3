@@ -16,7 +16,6 @@ class CallbackCreditCardTestV1 {
     private WebDriver driver;
 
     @BeforeAll
-//    static void setUpAll() {System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe"); }
     static void setDriver() {
         WebDriverManager.chromedriver().setup();
     }
