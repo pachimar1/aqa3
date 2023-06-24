@@ -38,6 +38,7 @@ class CallbackCreditCardTestV1 {
 
     @Test
     void shouldTestV1() {
+        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79270000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
